@@ -4,7 +4,7 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', (req, res) => {
-  res.send("<h1>This route works</h1>")
+ 
   // find all categories
   // be sure to include its associated Products
   Category.findAll()
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Products
   Category.findOne({
     where: {
-      category_name: req.params.category_name
+      id: req.params.id
     }
   })
     .then(dbCategoryData => {
